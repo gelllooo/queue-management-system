@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Queue System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📋 Student Queue Registration</h1>
+
+    <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <select name="service" required>
+            <option value="">Select Service</option>
+            <option value="TOR Request">TOR Request</option>
+            <option value="Enrollment">Enrollment</option>
+            <option value="ID Processing">ID Processing</option>
+        </select>
+        <button type="submit">Get Queue Number</button>
+    </form>
+
+    <h2>🧍 Current Queue</h2>
+    <ul>
+        {% for person in queue %}
+            <li>Queue #{{ person[0] }} - {{ person[1] }} ({{ person[2] }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+<select name="priority">
+    <option value="0">Normal</option>
+    <option value="1">PWD/Senior</option>
+</select>

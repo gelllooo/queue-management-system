@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Queue Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🖥️ Admin Dashboard</h1>
+
+    <form action="/next" method="POST">
+        <button type="submit">Call Next Student</button>
+    </form>
+
+    <h2>🧍 Current Queue</h2>
+    <ul>
+        {% for person in queue %}
+            <li>Queue #{{ person[0] }} - {{ person[1] }} ({{ person[2] }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
